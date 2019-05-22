@@ -1,0 +1,22 @@
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome("chromedriver.exe")
+driver.set_page_load_timeout(10)
+driver.get("http://localhost/scrappy/")
+time.sleep(15)
+driver.find_element_by_id("nome").clear()
+driver.find_element_by_id("nome").send_keys("test")
+time.sleep(1)
+driver.find_element_by_id("email").clear()
+driver.find_element_by_id("email").send_keys("test@gmail.com")
+time.sleep(1)
+driver.find_element_by_id("telefone").clear()
+driver.find_element_by_id("telefone").send_keys("11111111111")
+time.sleep(1)
+driver.find_element_by_id("btcon").click()
+time.sleep(2)
+driver.find_element_by_name("termos").click()
+driver.find_element_by_id("btFinal").click()
+time.sleep(20)
+driver.quit()
